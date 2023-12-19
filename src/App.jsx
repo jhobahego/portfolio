@@ -25,7 +25,7 @@ import "./styles.css";
  */
 const siteProps = {
   name: "Jhon Hernandez",
-  title: "Fullstack Java, JavaScript and Python developer",
+  title: "Fullstack Developer",
   email: "jhobahego23@gmail.com",
   gitHub: "jhobahego",
   instagram: "jhon.bairo.hernandez",
