@@ -19,9 +19,9 @@ import React from "react";
  * Need an image? Check out https://unsplash.com to download a photo you
  * freely use on your site.
  */
-import image from "../images/design-desk.jpeg";
+import image from "../images/projects-section.jpg";
 
-const imageAltText = "desktop with books and laptop";
+const imageAltText = "desktop with a book, a camera and several cups of coffee";
 
 /**
  * Project list
@@ -31,28 +31,27 @@ const imageAltText = "desktop with books and laptop";
  */
 const projectList = [
   {
-    title: "10 Things To Know About Azure Static Web Apps 🎉",
-    description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
-    url: "https://dev.to/azure/10-things-to-know-about-azure-static-web-apps-3n4i",
+    title: "Tic Tac Toe Game",
+    description: "Classic Tic Tac Toe game, made for practice React",
+    url: "https://juego-tictac.netlify.app",
   },
   {
-    title: "Web Development for Beginners",
+    title: "Books app",
     description:
-      "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
-    url: "https://github.com/microsoft/web-dev-for-beginners",
+      "App writting with Vue3 for manage your favorite books, It has a list of read and unread books with their respective filters.",
+    url: "https://jhobadev-reading-list.netlify.app",
   },
   {
-    title: "My Resume Site",
+    title: "Todo app",
     description:
-      "Created from Microsoft's resume workshop and deployed to GitHub pages. Includes my experience and design abilities.",
-    url: "https://github.com/microsoft/workshop-library/tree/main/full/build-resume-website",
+      "App for manage Todos write with React using TypeScript and notifications, connecting with backend of SpringBoot.",
+    url: "https://jhobadev-todo-app-ts.netlify.app",
   },
   {
-    title: "GitHub Codespaces and github.dev",
+    title: "Document Management System (SGD)",
     description:
-      "Video interview to explain when to use GitHub.dev versus GitHub Codespaces, and how best to use each tool.",
-    url: "https://www.youtube.com/watch?v=c3hHhRME_XI",
+      "Document management system to manage the purchase, sale and loan of all types of documents, the frontend was written in Vue3 and contact with a backend write in Python with FastAPI.",
+    url: "#",
   },
 ];
 
@@ -64,7 +63,12 @@ const Portfolio = () => {
         <div style={{ maxWidth: "40%", alignSelf: "center" }}>
           <img
             src={image}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
+            style={{
+              height: "90%",
+              width: "100%",
+              objectFit: "cover",
+              animation: "1s ease-out 0s 1 slideInLeft",
+            }}
             alt={imageAltText}
           />
         </div>
