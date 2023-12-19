@@ -27,12 +27,12 @@ const siteProps = {
   name: "Jhon Hernandez",
   title: "Fullstack Java, JavaScript and Python developer",
   email: "jhobahego23@gmail.com",
-  gitHub: "https://github.com/jhobahego",
-  instagram: "https://www.instagram.com/jhon.bairo.hernandez",
-  linkedIn: "https://www.linkedin.com/in/jhonbairohernandez",
+  gitHub: "jhobahego",
+  instagram: "jhon.bairo.hernandez",
+  linkedIn: "jhonbairohernandez",
   medium: "",
-  twitter: "https://twitter.com/JhobahegoTW",
-  youTube: "https://www.youtube.com/@jhonhernandez2271",
+  twitter: "JhobahegoTW",
+  youTube: "@jhonhernandez2271",
 };
 
 const primaryColor = "#4E567E";
