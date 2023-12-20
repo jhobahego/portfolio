@@ -134,3 +134,55 @@ img.socialIcon {
     transform: translateX(0);
   }
 }
+
+/* Education styles */
+.tl-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.tl-item-container .tl-item .tl-card {
+  max-height: 300px;
+}
+
+.tl-header {
+  width: 100%;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #dadee4;
+}
+
+.tl-card {
+  /* gray shadow */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.tl-item-container .tl-item {
+  display: flex;
+  position: relative;
+}
+
+.tl-item-container .tl-item::before {
+    background: #dadee4;
+    content: "";
+    height: 100%;
+    left: 19px;
+    position: absolute;
+    top: 20px;
+    width: 2px;
+		z-index: -1;
+}
+
+.tl-item-container .tl-item .tl-icon .tl-badge {
+  margin-top: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+.tl-item-container .tl-item .tl-content {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 0 0 0 1rem;
+}
