@@ -79,7 +79,7 @@ const educationList = [
 
 const Education = () => {
   return (
-    <section className="light" id="education">
+    <section className="padding" id="education">
       <h2 style={{ textAlign: "center", marginTop: "50px", marginBottom: "30px" }}>Education</h2>
 
       <div
@@ -87,8 +87,8 @@ const Education = () => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          marginLeft: "40px",
-          marginRight: "40px",
+          margin: "0 auto",
+          maxWidth: "1100px",
         }}
       >
         {educationList.map((education) => (
