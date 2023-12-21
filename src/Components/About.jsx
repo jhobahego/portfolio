@@ -54,6 +54,7 @@ const About = () => {
     <section className="padding" id="about">
       <img className="background" src={image} alt={imageAltText} />
       <div
+        className="about-card"
         style={{
           backgroundColor: "white",
           width: "50%",
