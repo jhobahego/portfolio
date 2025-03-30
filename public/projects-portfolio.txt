@@ -1,0 +1,5 @@
+https://jhobadev-todo-app-ts.netlify.app
+https://jhobadev-reading-list.netlify.app
+https://jhobadev-typermaster.netlify.app
+https://jhobadev-chatpdf.netlify.app
+https://jhobadev-chatpdf.netlify.app

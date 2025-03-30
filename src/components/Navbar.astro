@@ -1,0 +1,29 @@
+---
+const links = [
+  { text: "Inicio", href: "#home" },
+  { text: "Proyectos", href: "#projects" },
+  { text: "Contacto", href: "#contact" }
+];
+---
+
+<nav class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex-shrink-0">
+        <a href="#" class="text-xl font-bold text-gray-800 dark:text-white">JB</a>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          {links.map(link => (
+            <a
+              href={link.href}
+              class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              {link.text}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
