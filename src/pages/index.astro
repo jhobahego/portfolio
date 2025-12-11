@@ -172,7 +172,13 @@ const projects = [
             <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               Envíame un mensaje
             </h3>
-            <form id="contact-form" class="space-y-4">
+            <form
+              id="contact-form"
+              action="https://send.pageclip.co/aawZ7G3Til2N8UVmIE8e23akvvJ7D0DD"
+              method="POST"
+              target="hidden-iframe"
+              class="space-y-4"
+            >
               <div class="flex flex-col space-y-1">
                 <label for="name" class="text-gray-900 dark:text-white"
                   >Nombre</label
@@ -215,6 +221,7 @@ const projects = [
                 Enviar mensaje
               </button>
             </form>
+            <iframe name="hidden-iframe" style="display: none;"></iframe>
           </div>
         </div>
       </div>
@@ -226,11 +233,12 @@ const projects = [
 
     const form = document.getElementById("contact-form") as HTMLFormElement;
     const submitBtn = form?.querySelector('button[type="submit"]');
+    const iframe = document.querySelector(
+      'iframe[name="hidden-iframe"]',
+    ) as HTMLIFrameElement;
 
-    if (form && submitBtn) {
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
+    if (form && submitBtn && iframe) {
+      form.addEventListener("submit", () => {
         const originalBtnContent = submitBtn.innerHTML;
         submitBtn.innerHTML = `
             <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -240,53 +248,24 @@ const projects = [
             Enviando...
           `;
         (submitBtn as HTMLButtonElement).disabled = true;
+      });
 
-        const formData = new FormData(form);
-        const data = {
-          name: formData.get("name"),
-          email: formData.get("email"),
-          message: formData.get("message"),
-        };
+      iframe.addEventListener("load", () => {
+        // Only trigger if form was submitted (button is disabled)
+        if ((submitBtn as HTMLButtonElement).disabled) {
+          form.reset();
+          submitBtn.innerHTML = "Enviar mensaje";
+          (submitBtn as HTMLButtonElement).disabled = false;
 
-        try {
-          const response = await fetch(
-            "https://send.pageclip.co/aawZ7G3Til2N8UVmIE8e23akvvJ7D0DD",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(data),
-            },
-          );
-
-          if (response.ok) {
-            form.reset();
-            Toastify({
-              text: "¡Mensaje enviado! Gracias por contactarme. Te responderé lo antes posible.",
-              duration: 5000,
-              gravity: "top",
-              position: "right",
-              style: {
-                background: "linear-gradient(to right, #9333ea, #7c3aed)",
-              },
-            }).showToast();
-          } else {
-            throw new Error("Error sending message");
-          }
-        } catch (error) {
           Toastify({
-            text: "Hubo un error al enviar el mensaje. Por favor intenta nuevamente.",
+            text: "¡Mensaje enviado! Gracias por contactarme. Te responderé lo antes posible.",
             duration: 5000,
             gravity: "top",
             position: "right",
             style: {
-              background: "linear-gradient(to right, #dc2626, #b91c1c)",
+              background: "linear-gradient(to right, #9333ea, #7c3aed)",
             },
           }).showToast();
-        } finally {
-          submitBtn.innerHTML = originalBtnContent;
-          (submitBtn as HTMLButtonElement).disabled = false;
         }
       });
     }
