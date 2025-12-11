@@ -1,13 +1,12 @@
 ---
+import TechIcon from "./TechIcon.astro";
+
 interface Props {
   title: string;
   description: string;
   image: string;
   url: string;
-  technologies: Array<{
-    name: string;
-    icon: string;
-  }>;
+  technologies: Array<string>;
 }
 
 const { title, description, image, url, technologies } = Astro.props;
@@ -28,12 +27,9 @@ const { title, description, image, url, technologies } = Astro.props;
         {
           technologies.map((tech) => (
             <div class="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
-              <span
-                class="text-gray-800 dark:text-gray-200 w-4 h-4 flex items-center justify-center"
-                set:html={tech.icon}
-              ></span>
+              <TechIcon name={tech} class="w-4 h-4" />
               <span class="text-sm text-gray-600 dark:text-gray-300">
-                {tech.name}
+                {tech}
               </span>
             </div>
           ))
