@@ -11,9 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.15.11",
     "@astrojs/tailwind": "^5.1.0",
+    "aos": "^2.3.4",
+    "astro": "^4.15.11",
     "tailwindcss": "^3.4.1",
-    "aos": "^2.3.4"
+    "toastify-js": "^1.12.0"
   }
 }
